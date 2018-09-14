@@ -76,15 +76,15 @@ def makePOST(url, data):
     return response
 
 
-def sendCameraAliveMessage(apiServer, cameraID):
+def sendCameraAliveMessage(apiServer, cameraID, streamKey):
 
     print("sending camera alive message")
     url = '%s/v1/set_camera_status' % (apiServer)
     print("url", url)
     try:
             response = makePOST(url, {'camera_id': cameraID,
+                                      'stream_key': str(streamKey),
                                       'camera_status':'online'}) 
-                                    #todo:send unified stream key here
     except:
             print("could not make post to", url)
 
@@ -101,4 +101,5 @@ def handleSoundCommand(command, keyPosition):
                 if command[0:5] == "SOUND" and keyPosition == "down":
                         number = int(command[5:])
                         aplayFile('/home/pi/sound/SOUND%d.WAV' % number)
+
 

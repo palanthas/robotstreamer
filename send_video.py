@@ -343,7 +343,7 @@ def main():
     # overrides command line parameters using config file
     print("args on command line:", commandArgs)
 
-    robot_util.sendCameraAliveMessage(apiServer, commandArgs.camera_id)
+    robot_util.sendCameraAliveMessage(apiServer, commandArgs.camera_id, commandArgs.stream_key)
     #starts the backend services and
 
     print("camera id:", commandArgs.camera_id)
@@ -432,6 +432,7 @@ def main():
             print("sending camera alive message")
             print("")
             robot_util.sendCameraAliveMessage(apiServer,
+                                              commandArgs.stream_key,
                                               commandArgs.camera_id)
 
 
@@ -477,3 +478,4 @@ def main():
 
 
 main()
+
