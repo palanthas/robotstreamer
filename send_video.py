@@ -431,10 +431,7 @@ def main():
             print("")
             print("sending camera alive message")
             print("")
-            robot_util.sendCameraAliveMessage(apiServer,
-                                              commandArgs.stream_key,
-                                              commandArgs.camera_id)
-
+            robot_util.sendCameraAliveMessage((apiServer, commandArgs.camera_id, commandArgs.stream_key)
 
 
         if (count % 2) == 0:
