@@ -1,7 +1,7 @@
 <h1> Open Robot Control Code For Connecting to RobotStreamer.com </h1>
 <br>
 
-RobotStreamer is a unique streaming platform that allows users to interact not only with traditional video streams but through low latency telepresence. This is a new concept enabling the viewers of the stream to join the action through the "body" of a robot. So at a technical level, RobotStreamer is a robot control network and low latency live streaming platform. You can stream from a robot (typically a mobile robot with camera connected by wifi) or from a traditional camera. Yes that means you can stream whatever kind of live video you want on here. Yo can use a standard camera to stream, and we do support OBS. Also, you can buy robots from robotstreamer.com's store or make your own if you want the fully immersive robot (telepresence) stream.
+RobotStreamer is a unique streaming platform that allows users to interact not only with traditional video streams but through low latency telepresence. This is a new concept enabling the viewers of the stream to join the action through the "body" of a robot. So at a technical level, RobotStreamer is a robot control network and low latency live streaming platform. You can stream from a robot (typically a mobile robot with a camera connected by wifi) or from a traditional camera. Yes that means you can stream whatever kind of live video you want on here. Yo can use a standard camera to stream, and we do support OBS. Also, you can buy robots from robotstreamer.com's store or make your own if you want the fully immersive robot (telepresence) stream.
 
 Connect your movable cameras with TTS (robots) to *RobotStreamer.com*. We're a new project but already have interest from top live streamers like Ice Poseidon for robot camera control with massive numbers of users.
 
@@ -75,12 +75,12 @@ For Ubuntu 17.10 or later:
 sudo wget https://raw.githubusercontent.com/robotstreamer/robotstreamer/master/scripts/install_ubuntu.sh -O /tmp/install_ubuntu.sh && bash /tmp/install_ubuntu.sh
 ```
 
-To install your need your id's and keys to connect to robotstreamer.com. After logging in to website (and registering if needed), create your robot entry by going here. Fill in robot name and submit. The result will tell you your robot id, camera id, and stream key.
+To install you'll need your id's and keys to connect to robotstreamer.com. After logging in to the website (and registering if needed), create your robot entry by going here. Fill in robot name and submit. The result will tell you your robot id, camera id, and stream key.
 http://robotstreamer.com/new_stream.html
 
 During installation, you will be prompted for a robot id and camera id.
 
-After installaction, you need to set the --stream-key parameter for send_video.py and for controller.py in the file "/home/pi/start_robot"
+After installation,you need to set the --stream-key parameter for send_video.py and for controller.py in the file "/home/pi/start_robot"
 
 For example:
 
@@ -105,7 +105,7 @@ To edit your start_robot file, put this into the terminal.
 <h3> Installing robot control and video scripts </h3>
 
 
-The RasPi will need the following things install so it can talk to your motor and talk to the internet.
+The RasPi will need the following things installed so it can talk to your motor and talk to the internet.
 
 (1) Install [motor HAT software](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi/installing-software):
 
@@ -150,11 +150,11 @@ Edit the YOURROBOTID to your robot ID.
 
 Edit the YOURCAMERAID to your camera ID.
 
-You are getting both IDs when you are creating a new bot on the website.
+You get both IDs when you are creating a new bot on the website.
 
 The second parameter on send_video.py 0 is assuming you have one camera plugged into your Pi and you are using it, which is usually the case.
 
-There are more parameter possible for controller.py:
+There are more parameters possible for controller.py:
 
 ```robot_id```
 
@@ -162,7 +162,7 @@ Your Robot ID. Required
 
 ```--env prod | dev```
 
-Environment for example dev or prod | default='prod'
+Environment, for example dev or prod | default='prod'
 
 ```--type motor_hat | serial | l298n | motozero```
 
